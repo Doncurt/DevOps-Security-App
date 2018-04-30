@@ -24,13 +24,15 @@ app.get('/', async (req, res, next) => {
     next(err);
   }
 });
-app.get('/users/new/', async(req,res,next)=>{
-  try {
-    let email = req.body.inputEmail;
-    let password = req.body.inputPassword
-  }
-
-});
+// app.get('/users/new/', async(req,res,next)=>{
+//   try {
+//     let email = req.body.inputEmail;
+//     let password = req.body.inputPassword;
+//   } catch(err){
+//     next(err);
+//   }
+//
+// });
 app.post('/', async (req, res, next) => {
   // console.log(req.body);
   try {
