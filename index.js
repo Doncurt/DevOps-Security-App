@@ -1,10 +1,12 @@
 var express = require('express');
 var hbs = require('express-hbs');
+var helmet = require('helmet');
 var db = require('sqlite');
 var Promise = require('bluebird');
 
 
 var app = express();
+app.use(helmet());
 
 app.engine('hbs', hbs.express4({
   partialsDir: __dirname + '/public/partials'
@@ -13,6 +15,7 @@ app.set('views', __dirname + '/public');
 app.set('view engine', 'hbs');
 
 app.use(express.static('images'));
+
 app.use(express.urlencoded({ extended: true })); // to support URL-encoded bodies
 
 app.get('/', async (req, res, next) => {
